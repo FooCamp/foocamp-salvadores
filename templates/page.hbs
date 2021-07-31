@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
+    {{!-- Header goes here --}}
+
+    <main>
+      {{#each components}}
+        {{{module this}}}
+      {{/each}}
+    </main>
+
+    {{!-- Footer goes here --}}
 
     <script src="main.bundle.js"></script>
   </body>
