@@ -13,26 +13,17 @@
   </nav>
 
   <section class="menu-mobile">
-
     <button class="menu-mobile__category-toggle">
       {{categoryTitle}}
-      <span class="toggle-icon material-icons">chevron_right</span>
+      <i class="toggle-icon fas fa-chevron-down"></i>
     </button>
 
     <ul class="menu-mobile__category-list">
-
       {{#each categoryLinks}}
       <li class="menu-mobile__item menu-mobile__item--category">
         {{{module this}}}
       </li>
       {{/each}}
-
-      {{#each categoryLinks}}
-      <li class="menu-mobile__item menu-mobile__item--category">
-        {{{module this}}}
-      </li>
-      {{/each}}
-
     </ul>
 
     <hr class="links-divisor">
@@ -45,10 +36,4 @@
       {{/each}}
     </ul>
   </section>
-
-  <figure>
-    <img src="https://picsum.photos/id/1022/375" alt="">
-    <img src="https://picsum.photos/id/1022/375" alt="">
-    <img src="https://picsum.photos/id/1022/375" alt="">
-  </figure>
 </header>

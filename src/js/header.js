@@ -1,6 +1,7 @@
 // gets the hamburger button element and the mobile menu
 let menuToggle = document.querySelector(".header__menu-toggle");
 let menuMobile = document.querySelector(".menu-mobile");
+let bodyElem = document.body;
 
 // on Click calls toggleMobileMenu
 menuToggle.addEventListener('click', toggleMobileMenu);
@@ -11,6 +12,13 @@ function toggleMobileMenu() {
 
   // toggles the menu-open class of the hamburger button element
   menuToggle.classList.toggle('menu-open');
+
+  //disables body scroll when the mobile menu is open
+  if (menuToggle.classList.contains('menu-open')) {
+    bodyElem.style.overflow = 'hidden';
+  } else {
+    bodyElem.style.overflow = 'auto';
+  }
 }
 
 // gets the categories button and the categories list element

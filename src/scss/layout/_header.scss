@@ -4,8 +4,9 @@
   --anim-duration: 0.2s;
 
   // size of arrows is set by font-size
-  .material-icons {
-    font-size: 28px;
+  .link__icon,
+  .toggle-icon {
+    font-size: 16px;
   }
 
   // navigation bar
@@ -91,17 +92,21 @@
     z-index: 50;
     width: 100vw;
     height: 100vh;
-    // opacity: 0.5;
     overflow-y: scroll;
     transform: translateX(-100%);
     transition: transform var(--anim-duration) ease-in-out;
-    padding: 31px 32px 0px 32px;
+    padding: 35px 32px 65px 32px;
     background-color: var(--white);
     color: var(--mid-blue);
 
+    // li containing the link anchors
+    &__item {
+      padding-right: 8px;
+    }
+
     // header link spacing mobile
     .link {
-      margin-bottom: 29px;
+      margin-bottom: 32px;
     }
 
     // mobile menu list divisor
@@ -117,15 +122,15 @@
       justify-content: space-between;
       width: 100%;
       border: 0;
-      padding: 0;
+      padding: 0 8px 0 0;
       background-color: var(--white);
-      margin-bottom: 34px;
+      margin-bottom: 44px;
       font-weight: 400;
       color: var(--mid-blue);
 
       // toggle button icon close
       .toggle-icon {
-        transform: rotate(90deg);
+        transform: rotate(0deg);
         transition: transform var(--anim-duration) ease-in-out;
       }
 
@@ -136,7 +141,7 @@
 
       // toggle button icon open
       &.list-open .toggle-icon {
-        transform: rotate(-90deg);
+        transform: rotate(-180deg);
         transition: transform var(--anim-duration) ease-in-out;
       }
     }
@@ -173,4 +178,3 @@
     }
   }
 }
-
