@@ -8,12 +8,6 @@
     font-size: 28px;
   }
 
-  // mobile menu divisor
-  hr {
-    margin-bottom: 32px;
-    border-color: var(--navy-blue-20);
-  }
-
   // navigation bar
   &__nav {
     height: 60px;
@@ -42,7 +36,7 @@
     background-color: var(--mid-blue);
 
     // hamburger menu spans
-    span {
+    .hamburger-icon {
       display: block;
       position: absolute;
       height: 3px;
@@ -51,40 +45,40 @@
       background: var(--white);
     }
 
-    span:nth-child(1) {
+    .hamburger-icon:nth-child(1) {
       top: 0;
       transform-origin: left center;
       transform: rotate(0deg);
       transition: transform var(--anim-duration) ease-in-out;
     }
 
-    span:nth-child(2) {
+    .hamburger-icon:nth-child(2) {
       top: 9px;
       transform-origin: left center;
       opacity: 1;
       transition: opacity var(--anim-duration) ease-in-out;
     }
 
-    span:nth-child(3) {
+    .hamburger-icon:nth-child(3) {
       top: 18px;
       transform-origin: left center;
       transform: rotate(0deg);
       transition: transform var(--anim-duration) ease-in-out;
     }
 
-    &.menu-open span:nth-child(1) {
+    &.menu-open .hamburger-icon:nth-child(1) {
       top: 0px;
       left: 4px;
       transform: rotate(45deg);
       transition: transform var(--anim-duration) ease-in-out;
     }
 
-    &.menu-open span:nth-child(2) {
+    &.menu-open .hamburger-icon:nth-child(2) {
       opacity: 0;
       transition: opacity var(--anim-duration) ease-in-out;
     }
 
-    &.menu-open span:nth-child(3) {
+    &.menu-open .hamburger-icon:nth-child(3) {
       top: 19px;
       left: 4px;
       transform: rotate(-45deg);
@@ -96,13 +90,25 @@
     position: absolute;
     z-index: 50;
     width: 100vw;
-    max-height: 100vh;
+    height: 100vh;
+    // opacity: 0.5;
     overflow-y: scroll;
     transform: translateX(-100%);
     transition: transform var(--anim-duration) ease-in-out;
-    padding: 31px 32px 32px 32px;
+    padding: 31px 32px 0px 32px;
     background-color: var(--white);
     color: var(--mid-blue);
+
+    // header link spacing mobile
+    .link {
+      margin-bottom: 29px;
+    }
+
+    // mobile menu list divisor
+    .links-divisor {
+      margin: 0 0 32px 0;
+      border-color: var(--navy-blue-20);
+    }
 
     // categories toggle button
     &__category-toggle {
@@ -118,18 +124,18 @@
       color: var(--mid-blue);
 
       // toggle button icon close
-      span {
+      .toggle-icon {
         transform: rotate(90deg);
         transition: transform var(--anim-duration) ease-in-out;
       }
 
       // toggle button open
       &.list-open {
-        font-weight: 600;
+        font-family: $font-hn-semibold;
       }
 
       // toggle button icon open
-      &.list-open span {
+      &.list-open .toggle-icon {
         transform: rotate(-90deg);
         transition: transform var(--anim-duration) ease-in-out;
       }
@@ -137,6 +143,18 @@
 
     &.show-mobile-menu {
       transform: translateX(0);
+    }
+
+    // links after the divisor on mobile menu
+    &__nav-links {
+
+      .link {
+        color: var(--mid-blue);
+
+        &__icon {
+          color: var(--mid-blue);
+        }
+      }
     }
 
     //category list ul
@@ -151,30 +169,6 @@
       &.show-category-list {
         max-height: 1000px;
         transition: max-height var(--anim-duration) ease-in;
-      }
-    }
-
-    &__item {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      width: 100%;
-      margin-bottom: 32px;
-
-      &--category {
-        color: var(--electric-blue);
-      }
-
-      &--category > a {
-        color: var(--electric-blue);
-      }
-
-      &--nav {
-        color: var(--mid-blue);
-      }
-
-      &--nav > a {
-        color: var(--mid-blue);
       }
     }
   }

@@ -1,4 +1,7 @@
-<a href="{{link}}.html" class="{{type}}">
+<a href="{{link}}.html" class="link link--{{type}}">
   {{linkText}}
-  {{!-- <span class="chevron-right material-icons">chevron_right</span> --}}
+  {{#if withArrow}}
+  <span class="link__icon material-icons">chevron_right</span>
+  {{/if}}
 </a>
+

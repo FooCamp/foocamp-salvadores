@@ -1,14 +1,14 @@
 <header class="header">
   <nav class="header__nav">
 
-    <a href="arlony-page.html" class="header__image">
-      {{{asset headerImage}}}
+    <a href="/index.html" class="header__image">
+      <img src="/images/salvadores-logo.png" alt="salvadores">
     </a>
 
     <button class="header__menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span class="hamburger-icon"></span>
+      <span class="hamburger-icon"></span>
+      <span class="hamburger-icon"></span>
     </button>
   </nav>
 
@@ -16,7 +16,7 @@
 
     <button class="menu-mobile__category-toggle">
       {{categoryTitle}}
-      <span class="material-icons">chevron_right</span>
+      <span class="toggle-icon material-icons">chevron_right</span>
     </button>
 
     <ul class="menu-mobile__category-list">
@@ -24,21 +24,31 @@
       {{#each categoryLinks}}
       <li class="menu-mobile__item menu-mobile__item--category">
         {{{module this}}}
-        <span class="material-icons">chevron_right</span>
+      </li>
+      {{/each}}
+
+      {{#each categoryLinks}}
+      <li class="menu-mobile__item menu-mobile__item--category">
+        {{{module this}}}
       </li>
       {{/each}}
 
     </ul>
 
-    <hr>
+    <hr class="links-divisor">
 
     <ul class="menu-mobile__nav-links">
       {{#each navLinks}}
       <li class="menu-mobile__item menu-mobile__item--nav">
         {{{module this}}}
-        <span class="material-icons">chevron_right</span>
       </li>
       {{/each}}
     </ul>
   </section>
+
+  <figure>
+    <img src="https://picsum.photos/id/1022/375" alt="">
+    <img src="https://picsum.photos/id/1022/375" alt="">
+    <img src="https://picsum.photos/id/1022/375" alt="">
+  </figure>
 </header>
