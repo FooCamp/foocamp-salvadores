@@ -109,6 +109,14 @@
       margin-bottom: 32px;
     }
 
+    .link:active {
+      font-family: $font-hn-semibold;
+      color: var(--electric-blue);
+    }
+    .link:hover {
+      color: var(--electric-blue);
+    }
+
     // mobile menu list divisor
     .links-divisor {
       margin: 0 0 32px 0;
@@ -127,6 +135,7 @@
       margin-bottom: 44px;
       font-weight: 400;
       color: var(--mid-blue);
+      cursor: pointer;
 
       // toggle button icon close
       .toggle-icon {
@@ -159,6 +168,14 @@
         &__icon {
           color: var(--mid-blue);
         }
+      }
+
+      .link:active {
+        color: var(--mid-blue);
+        font-family: $font-hn-semibold;
+      }
+      .link:hover {
+        color: var(--mid-blue);
       }
     }
 
