@@ -3,5 +3,9 @@
   align-items: baseline;
   justify-content: space-between;
   width: 100%;
-  color: var(--white);
+  color: var(--electric-blue);
+
+  &__icon {
+    color: var(--electric-blue);
+  }
 }
