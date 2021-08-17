@@ -1,0 +1,41 @@
+.footer {
+  color: var(--white);
+  background-color: var(--navy-blue);
+  padding: 40px 15px 72px;
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__links {
+    margin-bottom: 12px;
+  }
+
+  &__link {
+    margin-bottom: 16px;
+
+    .link {
+      text-decoration: underline;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 11px;
+  }
+
+  &__icon {
+    margin-right: 10px;
+  }
+
+  &__contact-text {
+    a {
+      @extend .p;
+      text-decoration: underline;
+      color: var(--white);
+    }
+
+    p {
+      margin: 0px;
+    }
+  }
+}
