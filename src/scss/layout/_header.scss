@@ -1,6 +1,8 @@
 .header {
   --anim-duration: 250ms;
-
+  max-width: 1440px;
+  margin: 0 auto
+  ;
   // size of arrows is set by font-size
   .link__icon,
   .toggle-icon {
@@ -140,12 +142,14 @@
     visibility: hidden;
     position: absolute;
     z-index: 2;
-    background-color: lightcoral;
+    background-color: var(--white);
     top: 80px;
-    padding: 32px;
     border-radius: 4px;
     right: 0;
     width: 234px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--anim-duration) ease-in-out;
 
     @include breakpoint(md) {
       display: block;
@@ -156,7 +160,12 @@
       width: 244px;
     }
 
+    &.show-dropdown {
+      max-height: 500px;
+    }
+
     &__menu {
+      padding: 32px;
 
       &--item {
         margin-bottom: 32px;
@@ -345,11 +354,10 @@
       color: var(--electric-blue);
       max-height: 0;
       overflow: hidden;
-      transition: max-height var(--anim-duration) ease-out;
+      transition: max-height var(--anim-duration) ease-in-out;
 
       &.show-category-list {
         max-height: 1000px;
-        transition: max-height var(--anim-duration) ease-in;
       }
     }
   }

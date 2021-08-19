@@ -1,20 +1,20 @@
 // gets the hamburger button element and the mobile menu
-let menuToggle = document.querySelector(".header__menu-toggle");
+let mobileMenuToggle = document.querySelector(".header__menu-toggle");
 let menuMobile = document.querySelector(".menu-mobile");
 let bodyElem = document.body;
 
 // on Click calls toggleMobileMenu
-menuToggle.addEventListener('click', toggleMobileMenu);
+mobileMenuToggle.addEventListener('click', toggleMobileMenu);
 
 function toggleMobileMenu() {
   // toggles the show-mobile-menu class of the mobile menu
   menuMobile.classList.toggle('show-mobile-menu');
 
   // toggles the menu-open class of the hamburger button element
-  menuToggle.classList.toggle('menu-open');
+  mobileMenuToggle.classList.toggle('menu-open');
 
   //disables body scroll when the mobile menu is open
-  if (menuToggle.classList.contains('menu-open')) {
+  if (mobileMenuToggle.classList.contains('menu-open')) {
     bodyElem.style.overflow = 'hidden';
   } else {
     bodyElem.style.overflow = 'auto';
@@ -34,4 +34,14 @@ function toggleCategoryMenu() {
 
   // toggles the categories button 'list-open' class
   menuCategoryToggle.classList.toggle('list-open');
+}
+
+let dropdownButton = document.querySelector(".header__dropdown-button");
+let dropdownMenu = document.querySelector(".dropdown");
+
+dropdownButton.addEventListener('click', toggleDropdownMenu);
+
+function toggleDropdownMenu() {
+  dropdownMenu.classList.toggle("show-dropdown");
+  dropdownButton.classList.toggle("list-open");
 }
