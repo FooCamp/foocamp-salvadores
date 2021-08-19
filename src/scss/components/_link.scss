@@ -1,0 +1,11 @@
+.link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--electric-blue);
+
+  &__icon {
+    color: var(--electric-blue);
+  }
+}

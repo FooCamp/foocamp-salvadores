@@ -1,0 +1,25 @@
+// products class and its nodes
+
+.products {
+  padding-bottom: 8px;
+  background-color: var(--gray);
+
+  @include breakpoint(sm) {
+    padding-bottom: 50px;
+  }
+
+  &__title {
+    padding: 32px 0px 24px;
+    color: var(--navy-blue);
+    margin: 0px;
+    text-align: center;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    @include breakpoint(sm) {
+      margin-bottom: 30px;
+    }
+  }
+}
