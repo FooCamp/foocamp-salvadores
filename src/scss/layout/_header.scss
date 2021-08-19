@@ -1,5 +1,5 @@
 .header {
-  --anim-duration: 0.2s;
+  --anim-duration: 250ms;
 
   // size of arrows is set by font-size
   .link__icon,
@@ -15,11 +15,105 @@
     justify-content: space-between;
     background-color: var(--mid-blue);
     padding: 11px 25px 11px 20px;
+
+    @include breakpoint(md) {
+      height: 80px;
+      padding: 16px 45px 16px 40px;
+    }
+
+    @include breakpoint(lg) {
+      height: 80px;
+      padding: 16px 85px 16px 80px;
+    }
   }
 
   // logo
   &__image {
-    height: 38px;
+
+    img {
+      width: 134px;
+    }
+
+    @include breakpoint(md) {
+      img {
+        width: 172px;
+        min-width: 134px;
+      }
+    }
+  }
+
+  &__links {
+    display: none;
+    visibility: hidden;
+
+    @include breakpoint (md) {
+      visibility: visible;
+      display: flex;
+    }
+
+    justify-content: flex-end;
+  }
+
+  &__link {
+    visibility: inherit;
+    display: inherit;
+
+    margin-left: 15px;
+
+    @include breakpoint(lg) {
+      margin-left: 70px;
+    }
+
+    .link {
+      position: relative;
+      color: var(--white);
+      &__icon {
+        display: none;
+      }
+    }
+
+    .link:hover::after,
+    .link:active::after {
+      content: "";
+      background-color: var(--baby-blue);
+      font-family: $font-hn-semibold;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 30px;
+      padding: 1px 0;
+    }
+  }
+
+  &__dropdown {
+
+    border: 0;
+    background-color: var(--mid-blue);
+    cursor: pointer;
+    margin-left: 15px;
+
+    @include breakpoint(lg) {
+      margin-left: 70px;
+    }
+
+    color: var(--white);
+    // toggle button icon close
+    .toggle-icon {
+      margin-left: 13px;
+      transform: rotate(0deg);
+      transition: all var(--anim-duration) ease-in-out;
+    }
+
+    // toggle button open
+    &.list-open {
+      font-family: $font-hn-semibold;
+    }
+
+    // toggle button icon open
+    &.list-open .toggle-icon {
+      transform: rotate(-180deg);
+    }
+
   }
 
   // hamburger menu
@@ -34,6 +128,11 @@
     border: none;
     background-color: var(--mid-blue);
 
+    @include breakpoint(md) {
+      display: none;
+      visibility: hidden;
+    }
+
     // hamburger menu spans
     .hamburger-icon {
       display: block;
@@ -42,46 +141,41 @@
       width: 100%;
       border-radius: 5px;
       background: var(--white);
+      transition: all var(--anim-duration) ease-in-out;
     }
 
     .hamburger-icon:nth-child(1) {
       top: 0;
       transform-origin: left center;
       transform: rotate(0deg);
-      transition: transform var(--anim-duration) ease-in-out;
     }
 
     .hamburger-icon:nth-child(2) {
       top: 9px;
       transform-origin: left center;
       opacity: 1;
-      transition: opacity var(--anim-duration) ease-in-out;
     }
 
     .hamburger-icon:nth-child(3) {
       top: 18px;
       transform-origin: left center;
       transform: rotate(0deg);
-      transition: transform var(--anim-duration) ease-in-out;
     }
 
     &.menu-open .hamburger-icon:nth-child(1) {
       top: 0px;
       left: 4px;
       transform: rotate(45deg);
-      transition: transform var(--anim-duration) ease-in-out;
     }
 
     &.menu-open .hamburger-icon:nth-child(2) {
       opacity: 0;
-      transition: opacity var(--anim-duration) ease-in-out;
     }
 
     &.menu-open .hamburger-icon:nth-child(3) {
       top: 19px;
       left: 4px;
       transform: rotate(-45deg);
-      transition: transform var(--anim-duration) ease-in-out;
     }
   }
 
@@ -92,10 +186,15 @@
     height: 100vh;
     overflow-y: scroll;
     transform: translateX(-100%);
-    transition: transform var(--anim-duration) ease-in-out;
+    transition: all var(--anim-duration) ease-in-out;
     padding: 35px 32px 65px 32px;
     background-color: var(--white);
     color: var(--mid-blue);
+
+    @include breakpoint(md) {
+      display: none;
+      visibility: hidden;
+    }
 
     // li containing the link anchors
     &__item {
@@ -131,14 +230,13 @@
       padding: 0 8px 0 0;
       background-color: var(--white);
       margin-bottom: 44px;
-      font-weight: 400;
       color: var(--mid-blue);
       cursor: pointer;
 
       // toggle button icon close
       .toggle-icon {
         transform: rotate(0deg);
-        transition: transform var(--anim-duration) ease-in-out;
+        transition: all var(--anim-duration) ease-in-out;
       }
 
       // toggle button open
@@ -149,7 +247,6 @@
       // toggle button icon open
       &.list-open .toggle-icon {
         transform: rotate(-180deg);
-        transition: transform var(--anim-duration) ease-in-out;
       }
     }
 

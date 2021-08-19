@@ -2,9 +2,19 @@
   <nav class="header__nav">
 
     <a href="/index.html" class="header__image">
-      <img src="/images/salvadores-logo.png" alt="salvadores">
+      <img src="/images/salvadores-logo.svg" alt="salvadores">
     </a>
-
+    <ul class="header__links">
+      {{#each navLinks}}
+      <li class="header__link">
+        {{{module this}}}
+      </li>
+      {{/each}}
+      <button class="header__dropdown">
+        {{categoryTitle}}
+        <i class="toggle-icon fas fa-chevron-down"></i>
+      </button>
+    </ul>
     <button class="header__menu-toggle">
       <span class="hamburger-icon"></span>
       <span class="hamburger-icon"></span>
