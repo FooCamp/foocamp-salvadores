@@ -89,84 +89,84 @@
     }
   }
 
-  &__dropdown-button {
+  .dropdown {
     position: relative;
-    border: 0;
-    background-color: var(--mid-blue);
-    cursor: pointer;
-    margin-left: 15px;
 
-    @include breakpoint(lg) {
-      margin-left: 70px;
+    &__button {
+      position: relative;
+      border: 0;
+      background-color: var(--mid-blue);
+      cursor: pointer;
+      margin-left: 15px;
+
+      @include breakpoint(lg) {
+        margin-left: 70px;
+      }
+
+      color: var(--white);
+      // toggle button icon close
+      .toggle-icon {
+        margin-left: 13px;
+        transform: rotate(0deg);
+        transition: all var(--anim-duration) ease-in-out;
+      }
+
+      // toggle button open
+      &.list-open {
+        font-family: $font-hn-semibold;
+      }
+
+      // toggle button icon open
+      &.list-open .toggle-icon {
+        transform: rotate(-180deg);
+      }
     }
 
-    color: var(--white);
-    // toggle button icon close
-    .toggle-icon {
-      margin-left: 13px;
-      transform: rotate(0deg);
-      transition: all var(--anim-duration) ease-in-out;
-    }
-
-    // toggle button open
-    &.list-open {
+    &__button:hover,
+    &__button:active {
       font-family: $font-hn-semibold;
     }
 
-    // toggle button icon open
-    &.list-open .toggle-icon {
-      transform: rotate(-180deg);
-    }
-  }
-
-  &__dropdown-button:hover,
-  &__dropdown-button:active {
-    font-family: $font-hn-semibold;
-  }
-
-  &__dropdown-button:hover::after,
-  &__dropdown-button:active::after {
-    content: "";
-    background-color: var(--baby-blue);
-    position: absolute;
-    width: 94%;
-    left: 6px;
-    top: 30px;
-    padding: 1px 0;
-  }
-
-  .dropdown {
-    display: none;
-    visibility: hidden;
-    position: absolute;
-    z-index: 2;
-    background-color: var(--white);
-    top: 80px;
-    border-radius: 4px;
-    right: 0;
-    width: 234px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--anim-duration) ease-in-out;
-
-    @include breakpoint(md) {
-      display: block;
-      visibility: visible;
-    }
-    @include breakpoint(lg) {
-      right: 30px;
-      width: 244px;
-    }
-
-    &.show-dropdown {
-      max-height: 500px;
+    &__button:hover::after,
+    &__button:active::after {
+      content: "";
+      background-color: var(--baby-blue);
+      position: absolute;
+      width: 94%;
+      left: 6px;
+      top: 30px;
+      padding: 1px 0;
     }
 
     &__menu {
-      padding: 32px;
+      display: none;
+      visibility: hidden;
+      position: absolute;
+      z-index: 2;
+      background-color: var(--white);
+      top: 51px;
+      border-radius: 4px;
+      right: 4px;
+      width: 234px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--anim-duration) ease-in-out;
+
+      &.show-dropdown {
+        max-height: 1000px;
+      }
+
+      @include breakpoint(md) {
+        display: block;
+        visibility: visible;
+      }
+      @include breakpoint(lg) {
+        left: 25px;
+        width: 244px;
+      }
 
       &--item {
-        margin-bottom: 32px;
+        margin: 32px;
         color: var(--white);
 
         .link:hover,
@@ -179,10 +179,6 @@
         .link__icon {
           display: none;
         }
-      }
-
-      &--item:last-child {
-        margin-bottom: 0;
       }
     }
   }

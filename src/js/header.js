@@ -36,8 +36,9 @@ function toggleCategoryMenu() {
   menuCategoryToggle.classList.toggle('list-open');
 }
 
-let dropdownButton = document.querySelector(".header__dropdown-button");
-let dropdownMenu = document.querySelector(".dropdown");
+//dropdown menu elements
+let dropdownButton = document.querySelector(".dropdown__button");
+let dropdownMenu = document.querySelector(".dropdown__menu");
 
 dropdownButton.addEventListener('click', toggleDropdownMenu);
 

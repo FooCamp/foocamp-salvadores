@@ -11,21 +11,24 @@
         {{{module this}}}
       </li>
       {{/each}}
-      <button class="header__dropdown-button">
-        {{categoryTitle}}
-        <i class="toggle-icon fas fa-chevron-down"></i>
-      </button>
+
+      <li class="dropdown">
+        <button class="dropdown__button">
+          {{categoryTitle}}
+          <i class="toggle-icon fas fa-chevron-down"></i>
+        </button>
+
+        <ul class="dropdown__menu">
+          {{#each categoryLinks}}
+          <li class="dropdown__menu--item">
+            {{{module this}}}
+          </li>
+          {{/each}}
+        </ul>
+      </li>
     </ul>
 
-    <section class="dropdown">
-      <ul class="dropdown__menu">
-        {{#each categoryLinks}}
-        <li class="dropdown__menu--item">
-          {{{module this}}}
-        </li>
-        {{/each}}
-      </ul>
-    </section>
+
 
     <button class="header__menu-toggle">
       <span class="hamburger-icon"></span>
