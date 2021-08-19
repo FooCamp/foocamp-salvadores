@@ -72,21 +72,25 @@
       }
     }
 
+    .link:hover,
+    .link:active {
+      font-family: $font-hn-semibold;
+    }
+
     .link:hover::after,
     .link:active::after {
       content: "";
       background-color: var(--baby-blue);
-      font-family: $font-hn-semibold;
       position: absolute;
       width: 100%;
-      left: 0;
+      left: 1px;
       top: 30px;
       padding: 1px 0;
     }
   }
 
-  &__dropdown {
-
+  &__dropdown-button {
+    position: relative;
     border: 0;
     background-color: var(--mid-blue);
     cursor: pointer;
@@ -113,7 +117,67 @@
     &.list-open .toggle-icon {
       transform: rotate(-180deg);
     }
+  }
 
+  &__dropdown-button:hover,
+  &__dropdown-button:active {
+    font-family: $font-hn-semibold;
+  }
+
+  &__dropdown-button:hover::after,
+  &__dropdown-button:active::after {
+    content: "";
+    background-color: var(--baby-blue);
+    position: absolute;
+    width: 94%;
+    left: 6px;
+    top: 30px;
+    padding: 1px 0;
+  }
+
+  .dropdown {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    background-color: lightcoral;
+    top: 80px;
+    padding: 32px;
+    border-radius: 4px;
+    right: 0;
+    width: 234px;
+
+    @include breakpoint(md) {
+      display: block;
+      visibility: visible;
+    }
+    @include breakpoint(lg) {
+      right: 30px;
+      width: 244px;
+    }
+
+    &__menu {
+
+      &--item {
+        margin-bottom: 32px;
+        color: var(--white);
+
+        .link:hover,
+        .link:active {
+          font-family: $font-hn-semibold;
+          color: var(--electric-blue);
+          text-decoration: underline;
+        }
+
+        .link__icon {
+          display: none;
+        }
+      }
+
+      &--item:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   // hamburger menu
@@ -181,7 +245,7 @@
 
   .menu-mobile {
     position: absolute;
-    z-index: 50;
+    z-index: 2;
     width: 100vw;
     height: 100vh;
     overflow-y: scroll;
