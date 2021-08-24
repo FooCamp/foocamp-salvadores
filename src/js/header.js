@@ -36,13 +36,24 @@ function toggleCategoryMenu() {
   menuCategoryToggle.classList.toggle('list-open');
 }
 
-//dropdown menu elements
-let dropdownButton = document.querySelector(".dropdown__button");
-let dropdownMenu = document.querySelector(".dropdown__menu");
+// dropdown menu elements
 
-dropdownButton.addEventListener('click', toggleDropdownMenu);
+// listener to the whole document for opening and closing the menu
+document.addEventListener('click', toggleDropdownMenu);
 
-function toggleDropdownMenu() {
-  dropdownMenu.classList.toggle("show-dropdown");
-  dropdownButton.classList.toggle("list-open");
+function toggleDropdownMenu(event) {
+
+  let dropdownButton = document.querySelector(".dropdown__button");
+  let dropdownMenu = document.querySelector(".dropdown__menu");
+
+  // if the dropdown button or a child are clicked => toggle the menu and button classes
+  if (event.target.classList.contains('dropdown__button') || event.target.parentNode.classList.contains('dropdown__button')) {
+    dropdownMenu.classList.toggle("show-dropdown");
+    dropdownButton.classList.toggle("list-open");
+  } else {
+
+    // if a different element is clicked close the menu
+    dropdownMenu.classList.remove("show-dropdown");
+    dropdownButton.classList.remove("list-open");
+  }
 }

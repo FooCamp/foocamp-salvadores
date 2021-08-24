@@ -44,10 +44,8 @@
 
   &__links {
     display: none;
-    visibility: hidden;
 
     @include breakpoint (md) {
-      visibility: visible;
       display: flex;
     }
 
@@ -55,7 +53,6 @@
   }
 
   &__link {
-    visibility: inherit;
     display: inherit;
 
     margin-left: 15px;
@@ -84,7 +81,7 @@
       position: absolute;
       width: 100%;
       left: 1px;
-      top: 30px;
+      top: 28px;
       padding: 1px 0;
     }
   }
@@ -118,7 +115,7 @@
 
       // toggle button icon open
       &.list-open .toggle-icon {
-        transform: rotate(-180deg);
+        transform: rotate(0deg);
       }
     }
 
@@ -134,20 +131,19 @@
       position: absolute;
       width: 94%;
       left: 6px;
-      top: 30px;
+      top: 28px;
       padding: 1px 0;
     }
 
     &__menu {
       display: none;
-      visibility: hidden;
       position: absolute;
       z-index: 2;
       background-color: var(--white);
-      top: 51px;
+      top: 45px;
       border-radius: 4px;
-      right: 4px;
-      width: 234px;
+      right: 0px;
+      width: 244px;
       max-height: 0;
       overflow: hidden;
       transition: max-height var(--anim-duration) ease-in-out;
@@ -158,11 +154,9 @@
 
       @include breakpoint(md) {
         display: block;
-        visibility: visible;
       }
       @include breakpoint(lg) {
         left: 25px;
-        width: 244px;
       }
 
       &--item {
@@ -197,7 +191,6 @@
 
     @include breakpoint(md) {
       display: none;
-      visibility: hidden;
     }
 
     // hamburger menu spans
@@ -260,7 +253,6 @@
 
     @include breakpoint(md) {
       display: none;
-      visibility: hidden;
     }
 
     // li containing the link anchors
@@ -313,7 +305,7 @@
 
       // toggle button icon open
       &.list-open .toggle-icon {
-        transform: rotate(-180deg);
+        transform: rotate(90deg);
       }
     }
 
