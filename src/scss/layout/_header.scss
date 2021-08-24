@@ -32,10 +32,8 @@
 
     img {
       width: 134px;
-    }
 
-    @include breakpoint(md) {
-      img {
+      @include breakpoint(md) {
         width: 172px;
         min-width: 134px;
       }
@@ -54,7 +52,6 @@
 
   &__link {
     display: inherit;
-
     margin-left: 15px;
 
     @include breakpoint(lg) {
@@ -112,6 +109,15 @@
       &.list-open {
         font-family: $font-hn-semibold;
       }
+      &.list-open::after {
+        content: "";
+        background-color: var(--baby-blue);
+        position: absolute;
+        width: 94%;
+        left: 6px;
+        top: 27px;
+        padding: 1px 0;
+      }
 
       // toggle button icon open
       &.list-open .toggle-icon {
@@ -131,7 +137,7 @@
       position: absolute;
       width: 94%;
       left: 6px;
-      top: 28px;
+      top: 27px;
       padding: 1px 0;
     }
 
@@ -199,7 +205,7 @@
       position: absolute;
       height: 3px;
       width: 100%;
-      border-radius: 5px;
+      //border-radius: 5px;
       background: var(--white);
       transition: all var(--anim-duration) ease-in-out;
     }
