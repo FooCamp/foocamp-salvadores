@@ -1,0 +1,43 @@
+.instagram-post {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 32px 37px;
+  text-align: center;
+
+  &__image {
+    display: flex;
+    justify-items: center;
+    margin-bottom: 32px;
+  }
+
+  &__figure {
+    flex: 1;
+    height: auto;
+    width: 285px;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  i, a {
+    color: var(--mid-blue);
+  }
+
+  &__link {
+    background-color: var(--baby-blue-25);
+    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid var(--baby-blue);
+  }
+}

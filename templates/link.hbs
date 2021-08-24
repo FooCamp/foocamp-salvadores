@@ -1,6 +1,8 @@
-<a href="{{link}}.html" class="link link--{{type}} p">
+<a href="{{#if isExternal}}{{link}}{{else}}{{link}}.html{{/if}}" class="link link--{{type}} p" target="{{#if isExternal}}_blank{{else}}_self{{/if}}">
   {{linkText}}
   {{#if withArrow}}
   <i class="link__icon fas fa-chevron-right"></i>
   {{/if}}
+  <i class="link__icon fab fa-instagram fa-lg"></i>
+  <i class="link__icon fab fa-whatsapp fa-lg"></i>
 </a>
