@@ -1,0 +1,21 @@
+.banner {
+  background-color: var(--baby-blue);
+  text-align: center;
+  padding: 16px 0;
+
+  &__content {
+    font-size: 1.4rem;
+    color: var(--navy-blue);
+    cursor: pointer;
+    text-decoration: underline;
+
+    @include breakpoint(lg) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__content:hover {
+    text-decoration: underline;
+    color: var(--electric-blue);
+  }
+}
