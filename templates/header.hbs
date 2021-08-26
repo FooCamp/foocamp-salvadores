@@ -2,8 +2,33 @@
   <nav class="header__nav">
 
     <a href="/index.html" class="header__image">
-      <img src="/images/salvadores-logo.png" alt="salvadores">
+      <img src="/images/salvadores-logo.svg" alt="salvadores">
     </a>
+
+    <ul class="header__links">
+      {{#each navLinks}}
+      <li class="header__link">
+        {{{module this}}}
+      </li>
+      {{/each}}
+
+      <li class="dropdown">
+        <button class="dropdown__button">
+          {{categoryTitle}}
+          <i class="toggle-icon fas fa-chevron-down"></i>
+        </button>
+
+        <ul class="dropdown__menu">
+          {{#each categoryLinks}}
+          <li class="dropdown__menu--item">
+            {{{module this}}}
+          </li>
+          {{/each}}
+        </ul>
+      </li>
+    </ul>
+
+
 
     <button class="header__menu-toggle">
       <span class="hamburger-icon"></span>
@@ -15,7 +40,7 @@
   <section class="menu-mobile">
     <button class="menu-mobile__category-toggle">
       {{categoryTitle}}
-      <i class="toggle-icon fas fa-chevron-down"></i>
+      <i class="toggle-icon fas fa-chevron-right"></i>
     </button>
 
     <ul class="menu-mobile__category-list">
