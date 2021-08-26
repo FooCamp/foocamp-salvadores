@@ -1,3 +1,195 @@
 .header {
-  height: 90px;
+  --anim-duration: 0.2s;
+
+  // size of arrows is set by font-size
+  .link__icon,
+  .toggle-icon {
+    font-size: 16px;
+  }
+
+  // navigation bar
+  &__nav {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--mid-blue);
+    padding: 11px 25px 11px 20px;
+  }
+
+  // logo
+  &__image {
+    height: 38px;
+  }
+
+  // hamburger menu
+  &__menu-toggle {
+    margin: auto 0;
+    padding: 0;
+    height: 21px;
+    width: 27px;
+    position: relative;
+    cursor: pointer;
+    color: var(--white);
+    border: none;
+    background-color: var(--mid-blue);
+
+    // hamburger menu spans
+    .hamburger-icon {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      border-radius: 5px;
+      background: var(--white);
+    }
+
+    .hamburger-icon:nth-child(1) {
+      top: 0;
+      transform-origin: left center;
+      transform: rotate(0deg);
+      transition: transform var(--anim-duration) ease-in-out;
+    }
+
+    .hamburger-icon:nth-child(2) {
+      top: 9px;
+      transform-origin: left center;
+      opacity: 1;
+      transition: opacity var(--anim-duration) ease-in-out;
+    }
+
+    .hamburger-icon:nth-child(3) {
+      top: 18px;
+      transform-origin: left center;
+      transform: rotate(0deg);
+      transition: transform var(--anim-duration) ease-in-out;
+    }
+
+    &.menu-open .hamburger-icon:nth-child(1) {
+      top: 0px;
+      left: 4px;
+      transform: rotate(45deg);
+      transition: transform var(--anim-duration) ease-in-out;
+    }
+
+    &.menu-open .hamburger-icon:nth-child(2) {
+      opacity: 0;
+      transition: opacity var(--anim-duration) ease-in-out;
+    }
+
+    &.menu-open .hamburger-icon:nth-child(3) {
+      top: 19px;
+      left: 4px;
+      transform: rotate(-45deg);
+      transition: transform var(--anim-duration) ease-in-out;
+    }
+  }
+
+  .menu-mobile {
+    position: absolute;
+    z-index: 50;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    transform: translateX(-100%);
+    transition: transform var(--anim-duration) ease-in-out;
+    padding: 35px 32px 65px 32px;
+    background-color: var(--white);
+    color: var(--mid-blue);
+
+    // li containing the link anchors
+    &__item {
+      padding-right: 8px;
+    }
+
+    // header link spacing mobile
+    .link {
+      margin-bottom: 32px;
+    }
+
+    .link:active {
+      font-family: $font-hn-semibold;
+      color: var(--electric-blue);
+    }
+    .link:hover {
+      color: var(--electric-blue);
+    }
+
+    // mobile menu list divisor
+    .links-divisor {
+      margin: 0 0 32px 0;
+      border-color: var(--navy-blue-20);
+    }
+
+    // categories toggle button
+    &__category-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      border: 0;
+      padding: 0 8px 0 0;
+      background-color: var(--white);
+      margin-bottom: 44px;
+      font-weight: 400;
+      color: var(--mid-blue);
+      cursor: pointer;
+
+      // toggle button icon close
+      .toggle-icon {
+        transform: rotate(0deg);
+        transition: transform var(--anim-duration) ease-in-out;
+      }
+
+      // toggle button open
+      &.list-open {
+        font-family: $font-hn-semibold;
+      }
+
+      // toggle button icon open
+      &.list-open .toggle-icon {
+        transform: rotate(-180deg);
+        transition: transform var(--anim-duration) ease-in-out;
+      }
+    }
+
+    &.show-mobile-menu {
+      transform: translateX(0);
+    }
+
+    // links after the divisor on mobile menu
+    &__nav-links {
+
+      .link {
+        color: var(--mid-blue);
+
+        &__icon {
+          color: var(--mid-blue);
+        }
+      }
+
+      .link:active {
+        color: var(--mid-blue);
+        font-family: $font-hn-semibold;
+      }
+      .link:hover {
+        color: var(--mid-blue);
+      }
+    }
+
+    //category list ul
+    &__category-list {
+      position: relative;
+      display: block;
+      color: var(--electric-blue);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--anim-duration) ease-out;
+
+      &.show-category-list {
+        max-height: 1000px;
+        transition: max-height var(--anim-duration) ease-in;
+      }
+    }
+  }
 }
