@@ -1,46 +1,3 @@
-/*var slides = document.querySelectorAll(".hero__slide__container");
-var labels = document.querySelector(".hero__slider");
-
-slides.forEach(element => {
-  let Createlabel = document.createElement('label');
-  Createlabel.innerText = '.';
-  Createlabel.className = 'hero__slider__dot';
-  labels.append(Createlabel);
-});
-slides[0].classList.add('active');
-btns = document.querySelectorAll(".hero__slider__dot");
-btns[0].classList.add('active');
-let currentSlide = 1;
-// Javascript for image slider manual navigation
-var manualNav = function (manual) {
-  slides.forEach((slide) => {
-    slide.classList.remove('active');
-    btns.forEach((btn) => {
-      btn.classList.remove('active');
-      
-    });
-  });
-
-  slides[manual].classList.add('active');
-  btns[manual].classList.add('active');
-}
-var previousSlide=0;
-btns.forEach((btn, i) => {
-  btn.addEventListener("click", () => {
-    manualNav(i);
-    currentSlide = i;
-  });
-});
-
-*/
-
-
-
-
-
-
-
-
 
 // get our elements
 const slider = document.querySelector('.carousel'),
@@ -95,6 +52,7 @@ function getPositionX(event) {
 function touchStart(index) {
   return function (event) {
     currentIndex = index
+    console.log(index)
     startPos = getPositionX(event)
     isDragging = true
     animationID = requestAnimationFrame(animation)
@@ -149,6 +107,11 @@ function setSliderPosition() {
   slider.style.transform = `translateX(${currentTranslate}px)`
 }
 
-
+btns.forEach((btn, i) => {
+  btn.addEventListener("click", () => {
+    currentIndex=i;
+    setPositionByIndex()
+  });
+});
 
 
