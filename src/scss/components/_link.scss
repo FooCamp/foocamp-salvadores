@@ -7,5 +7,30 @@
 
   &__icon {
     color: var(--electric-blue);
+
+    &.fab {
+      display: none;
+    }
+  }
+
+  &--instagram,
+  &--whatsapp {
+    align-items: center;
+
+    .link__icon {
+      margin-left: 10px;
+    }
+  }
+
+  &--instagram {
+    .fa-instagram {
+      display: inline-block;
+    }
+  }
+
+  &--whatsapp {
+    .fa-whatsapp {
+      display: inline-block;
+    }
   }
 }
