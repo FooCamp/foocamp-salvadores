@@ -1,15 +1,23 @@
 <footer class="footer">
-  <h3 class="footer__title">{{navLinksTitle}}</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-2">
+        <h3 class="footer__title">{{navLinksTitle}}</h3>
+        <ul class="footer__links">
+          {{#each navLinks}}
+            <li class="footer__link p">{{{module this}}}</li>
+          {{/each}}
+        </ul>
+      </div>
 
-  <ul class="footer__links">
-    {{#each navLinks}}
-      <li class="footer__link p">{{{module this}}}</li>
-    {{/each}}
-  </ul>
+      <div class="col-md-4 offset-1">
+        <h3 class="footer__contact">
+          <span class="fab fa-whatsapp footer__icon"></span>{{contactTitle}}
+        </h3>
+        <div class="footer__contact-text">{{{richText contactText}}}</div>
 
-  <h3 class="footer__contact">
-    <span class="fab fa-whatsapp footer__icon"></span>{{contactTitle}}
-  </h3>
+      </div>
 
-  <div class="footer__contact-text">{{{richText contactText}}}</div>
+    </div>
+  </div>
 </footer>
