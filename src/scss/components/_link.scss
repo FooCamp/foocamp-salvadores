@@ -1,0 +1,36 @@
+.link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--electric-blue);
+
+  &__icon {
+    color: var(--electric-blue);
+
+    &.fab {
+      display: none;
+    }
+  }
+
+  &--instagram,
+  &--whatsapp {
+    align-items: center;
+
+    .link__icon {
+      margin-left: 10px;
+    }
+  }
+
+  &--instagram {
+    .fa-instagram {
+      display: inline-block;
+    }
+  }
+
+  &--whatsapp {
+    .fa-whatsapp {
+      display: inline-block;
+    }
+  }
+}

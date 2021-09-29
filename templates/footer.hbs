@@ -1,0 +1,15 @@
+<footer class="footer">
+  <h3 class="footer__title">{{navLinksTitle}}</h3>
+
+  <ul class="footer__links">
+    {{#each navLinks}}
+      <li class="footer__link p">{{{module this}}}</li>
+    {{/each}}
+  </ul>
+
+  <h3 class="footer__contact">
+    <span class="fab fa-whatsapp footer__icon"></span>{{contactTitle}}
+  </h3>
+
+  <div class="footer__contact-text">{{{richText contactText}}}</div>
+</footer>

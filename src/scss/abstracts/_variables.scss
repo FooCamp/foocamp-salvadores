@@ -1,5 +1,17 @@
 :root {
-  --black: #000000;
-  --red: #e60012;
+  --navy-blue: #283156;
+  --mid-blue: #4f61ab;
+  --electric-blue: #6d86eb;
+  --baby-blue: #c7d1fc;
+  --gray: #fafafa;
   --white: #ffffff;
+  --baby-blue-25: rgba(199, 209, 252, 0.25);
+  --navy-blue-20: rgba(40, 49, 86, 0.2);
+  --navy-blue-5: rgba(40, 49, 86, 0.05);
+  --navy-blue-50: rgba(40, 49, 86, 0.5);
 }
+
+$font-hn-semibold-italic: "Hero New Semibold Italic";
+$font-hn-semibold: "Hero New Semibold";
+$font-hn-regular: "Hero New Regular";
+$font-hn-light-italic: "Hero New Light Italic";
