@@ -1,7 +1,11 @@
 .product-detail {
   background-color: var(--gray);
-  padding-top: 52px;
+  padding-top: 0;
   padding-bottom: 112px;
+
+  @include breakpoint(sm) {
+    padding-top: 52px;
+  }
 
   .col-sm-6,
   .col-sm-4 {
@@ -12,23 +16,55 @@
 
   &__images {
     display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    align-content: flex-start;
-    margin-bottom: 40px;
-    gap: 1rem;
+    width: 92vw;
+    margin: 4vw;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    @include breakpoint(sm) {
+      width: 100%;
+      margin: 0;
+      overflow-x: visible;
+      flex-flow: row wrap;
+      align-items: flex-start;
+      align-content: flex-start;
+      margin-bottom: 40px;
+      gap: 1rem;
+    }
 
     @include breakpoint(lg) {
       gap: 2rem;
     }
   }
 
+  &__images::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+  }
+
+  &__images > div {
+    scroll-snap-align: start;
+  }
+
   &__image {
     display: flex;
-    flex: 1 1 auto;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 92vw;
+    height: 100%;
+    padding: 7px;
+    border: 2px solid var(--baby-blue);
+    background-color: var(--white);
 
     // calc= __images width - gap
     @include breakpoint(sm) {
+      flex: 1 1 auto;
+      height: auto;
+      align-items: center;
+      align-content: center;
       flex: 0 1 calc(260px / 2);
     }
 
@@ -43,13 +79,6 @@
     @include breakpoint(xl) {
       flex: 0 1 calc(530px / 3);
     }
-
-    padding: 7px;
-    border: 2px solid var(--baby-blue);
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    background-color: var(--white);
 
     img {
       width: auto;
