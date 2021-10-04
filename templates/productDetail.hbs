@@ -1,0 +1,77 @@
+<div class="product-detail">
+  <div class="container">
+    <div class="row">
+      <div class="product-detail__images col-sm-6">
+        {{#each images}}
+          <div class="product-detail__image">
+            {{{asset this}}}
+          </div>
+        {{/each}}
+      </div>
+
+      <div class="product-detail__info col-sm-4 offset-sm-1">
+
+        <h2 class="product-detail__name">
+          {{productName}}
+        </h2>
+        <p class="product-detail__description">
+          {{productDescription}}
+        </p>
+        <p class="product-detail__price">
+          {{productPrice}}
+        </p>
+
+        <div class="product-detail__colors">
+          <h3 class="option-title">Colores disponibles</h3>
+          <div class="color-icons">
+            {{#each productColors}}
+              <div class="color-icon {{{this}}}"></div>
+            {{/each}}
+          </div>
+        </div>
+
+        <div class="product-detail__fabric">
+          {{#if typeOfFabric}}
+            <h3 class="option-title">Tipo de tela
+              <i class="option-arrow fas fa-chevron-down"></i>
+            </h3>
+            {{#each typeOfFabric}}
+              {{{module this}}}
+            {{/each}}
+            {{#if fabricImage}}
+              <a
+                href="{{assetSrc fabricImage}}"
+                download="fabricImage"
+                target="_blank"
+                class="fabric-guide p"
+              >Guía de telas</a>
+            {{/if}}
+          {{/if}}
+        </div>
+
+        <div class="product-detail__quantities">
+          {{#if quantities}}
+            <h3 class="option-title">Cantidades
+              <i class="option-arrow fas fa-chevron-down"></i>
+            </h3>
+            <p class="option-description">
+              {{quantities}}
+            </p>
+          {{/if}}
+        </div>
+
+        <div class="product-detail__embroidery">
+          {{#if embroideryOptions}}
+            <h3 class="option-title">Opción de bordado
+              <i class="option-arrow fas fa-chevron-down"></i>
+            </h3>
+            <p class="option-description">
+              {{embroideryOptions}}
+            </p>
+          {{/if}}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

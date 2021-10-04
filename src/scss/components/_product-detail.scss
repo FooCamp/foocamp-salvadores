@@ -1,0 +1,143 @@
+.product-detail {
+  background-color: var(--gray);
+  padding-top: 52px;
+  padding-bottom: 112px;
+
+  .col-sm-6,
+  .col-sm-4 {
+    @include breakpoint(sm) {
+      padding: 0;
+    }
+  }
+
+  &__images {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-bottom: 40px;
+    gap: 1rem;
+
+    @include breakpoint(lg) {
+      gap: 2rem;
+    }
+  }
+
+  &__image {
+    display: flex;
+    flex: 1 1 auto;
+
+    // calc= __images width - gap
+    @include breakpoint(sm) {
+      flex: 0 1 calc(260px / 2);
+    }
+
+    @include breakpoint(md) {
+      flex: 0 1 calc(350px / 2);
+    }
+
+    @include breakpoint(lg) {
+      flex: 0 1 calc(440px / 3);
+    }
+
+    @include breakpoint(xl) {
+      flex: 0 1 calc(530px / 3);
+    }
+
+    padding: 7px;
+    border: 2px solid var(--baby-blue);
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--white);
+
+    img {
+      width: auto;
+    }
+  }
+
+  &__image:first-child {
+    @include breakpoint(sm) {
+      border-radius: 4px;
+      padding: 19px;
+      max-height: 485px;
+      max-width: 100%;
+      flex: 1 1 100%;
+    }
+  }
+
+  &__name {
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    font-size: 20px;
+    font-family: $font-hn-semibold;
+    color: var(--mid-blue);
+    margin-bottom: 40px;
+  }
+
+  &__colors {
+    margin-bottom: 40px;
+
+    .color-icons {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .color-icon {
+      height: 48px;
+      width: 48px;
+      margin-right: 8px;
+      border-radius: 4px;
+
+      &.dark-blue {
+        background-color: var(--navy-blue);
+      }
+
+      &.white {
+        background-color: var(--white);
+      }
+    }
+  }
+
+  .option-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .option-arrow {
+    color: var(--navy-blue);
+    font-size: 17px;
+  }
+
+  .option-description {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__fabric,
+  &__quantities,
+  &__embroidery {
+    margin-bottom: 40px;
+  }
+
+  &__fabric {
+    color: var(--navy-blue);
+
+    .fabric-guide {
+      color: var(--mid-blue);
+      text-decoration: underline;
+    }
+
+    .type-title {
+      font-size: 16px;
+      font-family: $font-hn-regular;
+      margin-bottom: 8px;
+    }
+  }
+}
