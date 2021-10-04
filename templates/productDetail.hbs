@@ -14,24 +14,28 @@
         <h2 class="product-detail__name">
           {{productName}}
         </h2>
-        <p class="product-detail__description">
-          {{productDescription}}
-        </p>
+        {{#if productDescription}}
+          <p class="product-detail__description">
+            {{productDescription}}
+          </p>
+        {{/if}}
         <p class="product-detail__price">
           {{productPrice}}
         </p>
 
-        <div class="product-detail__colors">
-          <h3 class="option-title">Colores disponibles</h3>
-          <div class="color-icons">
-            {{#each productColors}}
-              <div class="color-icon {{{this}}}"></div>
-            {{/each}}
+        {{#if productColors}}
+          <div class="product-detail__colors">
+            <h3 class="option-title">Colores disponibles</h3>
+            <div class="color-icons">
+              {{#each productColors}}
+                <div class="color-icon {{{this}}}"></div>
+              {{/each}}
+            </div>
           </div>
-        </div>
+        {{/if}}
 
-        <div class="product-detail__fabric">
-          {{#if typeOfFabric}}
+        {{#if typeOfFabric}}
+          <div class="product-detail__fabric">
             <h3 class="option-title">Tipo de tela
               <i class="option-arrow fas fa-chevron-down"></i>
             </h3>
@@ -46,29 +50,33 @@
                 class="fabric-guide p"
               >Guía de telas</a>
             {{/if}}
-          {{/if}}
-        </div>
+          </div>
+        {{/if}}
 
-        <div class="product-detail__quantities">
-          {{#if quantities}}
+        {{#if quantities}}
+          <div class="product-detail__quantities">
             <h3 class="option-title">Cantidades
               <i class="option-arrow fas fa-chevron-down"></i>
             </h3>
             <p class="option-description">
               {{quantities}}
             </p>
-          {{/if}}
-        </div>
+          </div>
+        {{/if}}
 
-        <div class="product-detail__embroidery">
-          {{#if embroideryOptions}}
+        {{#if embroideryOptions}}
+          <div class="product-detail__embroidery">
             <h3 class="option-title">Opción de bordado
               <i class="option-arrow fas fa-chevron-down"></i>
             </h3>
             <p class="option-description">
               {{embroideryOptions}}
             </p>
-          {{/if}}
+          </div>
+        {{/if}}
+
+        <div class="contact-us-link">
+          {{{module contactUsLink}}}
         </div>
 
       </div>

@@ -59,8 +59,6 @@
   &__image:first-child {
     @include breakpoint(sm) {
       border-radius: 4px;
-      padding: 19px;
-      max-height: 485px;
       max-width: 100%;
       flex: 1 1 100%;
     }
@@ -93,6 +91,7 @@
       height: 48px;
       width: 48px;
       margin-right: 8px;
+      margin-bottom: 8px;
       border-radius: 4px;
 
       &.dark-blue {
@@ -138,6 +137,23 @@
       font-size: 16px;
       font-family: $font-hn-regular;
       margin-bottom: 8px;
+    }
+  }
+
+  .contact-us-link {
+    width: fit-content;
+
+    .link {
+      display: flex;
+      border-radius: 4px;
+      padding: 12px;
+      background-color: var(--electric-blue);
+      color: var(--white);
+
+      .link__icon {
+        color: var(--white);
+        font-size: 22px;
+      }
     }
   }
 }
