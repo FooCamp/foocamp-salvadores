@@ -1,16 +1,8 @@
 <div class="product-detail">
   <div class="container">
     <div class="row">
-      <div class="product-detail__images col-sm-6">
-        {{#each images}}
-          <div class="product-detail__image">
-            {{{asset this}}}
-          </div>
-        {{/each}}
-      </div>
 
-      <div class="product-detail__info col-sm-4 offset-sm-1">
-
+      <div class="product-detail__info col-sm-5 col-md-4 offset-sm-1">
         <h2 class="product-detail__name">
           {{productName}}
         </h2>
@@ -22,6 +14,17 @@
         <p class="product-detail__price">
           {{productPrice}}
         </p>
+      </div>
+
+      <div class="product-detail__images col-sm-6 order-sm-first">
+        {{#each images}}
+          <div class="product-detail__image">
+            {{{asset this}}}
+          </div>
+        {{/each}}
+      </div>
+
+      <div class="product-detail__options col-sm-5 col-md-4 offset-sm-7">
 
         {{#if productColors}}
           <div class="product-detail__colors">

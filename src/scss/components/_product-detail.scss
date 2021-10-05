@@ -1,6 +1,6 @@
 .product-detail {
   background-color: var(--gray);
-  padding-top: 0;
+  padding-top: 15px;
   padding-bottom: 112px;
 
   @include breakpoint(sm) {
@@ -53,15 +53,17 @@
     display: flex;
     flex-shrink: 0;
     justify-content: center;
-    width: 92vw;
-    height: 100%;
+    width: 78vw;
+    height: 78vw;
+    margin-right: 4vw;
     padding: 7px;
     border: 2px solid var(--baby-blue);
     background-color: var(--white);
 
     // calc= __images width - gap
     @include breakpoint(sm) {
-      flex: 1 1 auto;
+      height: 100%;
+      margin-right: 0;
       height: auto;
       align-items: center;
       align-content: center;
@@ -105,7 +107,11 @@
     font-size: 20px;
     font-family: $font-hn-semibold;
     color: var(--mid-blue);
-    margin-bottom: 40px;
+    margin-bottom: 15px;
+
+    @include breakpoint(md) {
+      margin-bottom: 40px;
+    }
   }
 
   &__colors {
@@ -122,6 +128,7 @@
       margin-right: 8px;
       margin-bottom: 8px;
       border-radius: 4px;
+      box-shadow: inset 0px 0px 0px 1px rgba(199, 209, 252, 0.25);
 
       &.dark-blue {
         background-color: var(--navy-blue);
