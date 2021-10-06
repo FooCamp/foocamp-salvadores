@@ -20,7 +20,7 @@
   
 }
 
-.hero__slide__container.false{
+.hero__slide__container{
   height: fit-content;
   width: 100vw;
   display: grid;
@@ -29,7 +29,7 @@
   grid-column-gap:1.85%;
   align-items: flex-start;
 }
-.hero__slide__container.true{
+.hero__slide__container.Dark{
   height: 100%;
   width: 100vw;
   display: grid;
@@ -39,10 +39,10 @@
   grid-column-gap:1.85%;
   align-items: flex-end;
 }
-.carousel .false .hero__img{
+.carousel  .hero__img{
   grid-column: 2/14;
 }
-.carousel .true .hero__img{
+.carousel .Dark .hero__img{
   grid-column: 1/15;
   max-height: 617px;
   grid-row: 1/3;
@@ -52,19 +52,16 @@
   width: 100%;
   height: auto;
 }
-.carousel .false img{
-  margin-top: 40px;
-}
 
 .grabbing {
   cursor: grabbing;
 }
-.carousel .hero__slide__container.false .info {
+.carousel .hero__slide__container .info {
   grid-column: 2/14;
   width: auto;
   justify-content: center;
 }
-.carousel .hero__slide__container.true .info {
+.carousel .hero__slide__container.Dark .info {
   grid-column: 2/14;
   width: auto;
   justify-content: center;
@@ -110,21 +107,21 @@
   margin-top: 3px;
 }
 
-.carousel .true img{
+.carousel .Dark img{
   z-index: 1;
   width: auto;
   height: 100vh;
   margin-left: 0;
 }
 @supports(object-fit: cover){
-  .carousel .true img{
+  .carousel .Dark img{
       height: 100vh;
       object-fit: cover;
       object-position: center center;
     }
 }
 
-.true{
+.Dark{
   color: var(--white);
 }
 .fa-internalPage{
@@ -157,10 +154,10 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
 
-.carousel .false .hero__img{
+.carousel  .hero__img{
   grid-column: 2/9;
 }
-.carousel .true .hero__img{
+.carousel .Dark .hero__img{
   grid-column: 1/15;
   max-height: 617px;
   grid-row: 1/3;
@@ -170,18 +167,15 @@
   width: 100%;
   height: auto;
 }
-.carousel .false img{
-  margin-top: 40px;
-}
 
-.carousel .hero__slide__container.false .info {
+.carousel .hero__slide__container .info {
   grid-column: 9/14;
   width: auto;
   justify-content: left;
   margin-top: auto;
   margin-bottom: auto;
 }
-.carousel .hero__slide__container.true .info {
+.carousel .hero__slide__container.Dark .info {
   grid-column: 9/14;
   width: auto;
   justify-content: center;
