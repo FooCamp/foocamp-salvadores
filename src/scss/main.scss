@@ -1,24 +1,26 @@
 // Abstracts
-@import "abstracts/variables";
-@import "abstracts/mixins";
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 // Base
-@import "base/normalize";
-@import "base/base";
-@import "base/typography";
+@import 'base/normalize';
+@import 'base/base';
+@import 'base/typography';
 
 // Layout
 
-@import "layout/header";
-@import "layout/footer";
+@import 'layout/header';
+@import 'layout/footer';
 
 // Components
-@import "components/products";
-@import "components/product";
-@import "components/link";
-@import "components/instagram-post";
-@import "components/banner";
-@import "components/category-products";
-@import "components/category-product";
-@import "components/category-header";
-@import "components/product-detail";
+@import 'components/products';
+@import 'components/product';
+@import 'components/link';
+@import 'components/instagram-post';
+@import 'components/banner';
+@import 'components/category-products';
+@import 'components/category-product';
+@import 'components/category-header';
+@import 'components/product-detail';
+@import 'components/related-product';
+@import 'components/related-products';

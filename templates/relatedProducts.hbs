@@ -1,0 +1,12 @@
+<section class="related-products">
+  <div class="container">
+    <h3 class="related-products__title">{{title}}</h3>
+    <ul class="row">
+      {{#each products}}
+      <li class="related-products__item col-12 col-sm-6 col-lg-4">
+        {{{module this}}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>

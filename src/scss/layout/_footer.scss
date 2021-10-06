@@ -3,12 +3,22 @@
   background-color: var(--navy-blue);
   padding: 40px 15px 72px;
 
-  &__title {
-    margin-bottom: 16px;
+  @include breakpoint(md) {
+    padding: 48px 0 90px;
   }
 
+  &__title {
+    margin-bottom: 16px;
+      }
+
   &__links {
+    column-count: 1;
     margin-bottom: 28px;
+
+    @include breakpoint(md) {
+      column-count: 2;
+      margin-bottom: 0;
+    }
   }
 
   &__link {
@@ -17,6 +27,7 @@
     .link {
       text-decoration: underline;
       color: var(--white);
+      margin-bottom: 16px;
     }
   }
 

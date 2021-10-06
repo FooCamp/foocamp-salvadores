@@ -1,0 +1,26 @@
+.related-products {
+  padding: 40px 0 24px;
+  background-color: var(--white);
+
+  @include breakpoint(md) {
+    padding: 80px 0 50px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    text-align: center;
+
+    @include breakpoint(md) {
+      margin-bottom: 39px;
+    }
+
+  }
+
+  &__item {
+    margin-bottom: 18px;
+
+    @include breakpoint(md) {
+      margin-bottom: 38px;
+    }
+  }
+}
