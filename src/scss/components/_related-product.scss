@@ -1,0 +1,59 @@
+.related-product {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  height: 100%;
+
+  &__card {
+    display: flex;
+    flex: 1;
+    flex-flow: column wrap;
+    align-items: center;
+    border-radius: 4px;
+    background-color: var(--white);
+    border: 2px solid var(--baby-blue);
+    box-sizing: border-box;
+    padding: 54px 0;
+    width: 100%;
+    margin-bottom: 16px;
+
+    .related-product__figure {
+      width: 160px;
+      margin-bottom: 2px;
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__card:hover {
+    @include breakpoint(md){
+      box-shadow: 0px 8px 24px rgba(41, 41, 41, 0.15);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-flow: column wrap;
+    align-self: flex-start;
+  }
+
+  &__category {
+    color: var(--mid-blue);
+    margin-bottom: 8px;
+
+    @include breakpoint(md){
+      font-size: 2rem;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__link {
+    color: var(--electric-blue);
+    margin: 0;
+    text-decoration: underline;
+    font-size: 1.6rem;
+
+  }
+}
