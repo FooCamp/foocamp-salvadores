@@ -1,0 +1,203 @@
+.product-detail {
+  background-color: var(--gray);
+  padding-top: 15px;
+  padding-bottom: 112px;
+
+  @include breakpoint(sm) {
+    padding-top: 52px;
+  }
+
+  .col-12,
+  .col-sm-5 {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .col-sm-6,
+  .col-sm-4,
+  .col-12,
+  .col-sm-5 {
+    @include breakpoint(sm) {
+      padding: 0;
+    }
+  }
+
+  &__images {
+    display: flex;
+    width: 96vw;
+    margin-left: 4vw;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    @include breakpoint(sm) {
+      width: 100%;
+      margin: 0;
+      overflow-x: visible;
+      flex-flow: row wrap;
+      align-items: flex-start;
+      align-content: flex-start;
+      margin-bottom: 40px;
+      gap: 1rem;
+    }
+
+    @include breakpoint(lg) {
+      gap: 2rem;
+    }
+  }
+
+  &__images::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+  }
+
+  &__images > div {
+    scroll-snap-align: start;
+  }
+
+  &__image {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 78vw;
+    height: 78vw;
+    margin-right: 4vw;
+    padding: 7px;
+    border: 2px solid var(--baby-blue);
+    background-color: var(--white);
+
+    // calc= __images width - gap
+    @include breakpoint(sm) {
+      height: 100%;
+      margin-right: 0;
+      height: auto;
+      align-items: center;
+      align-content: center;
+      flex: 0 1 calc(260px / 2);
+    }
+
+    @include breakpoint(md) {
+      flex: 0 1 calc(350px / 2);
+    }
+
+    @include breakpoint(lg) {
+      flex: 0 1 calc(440px / 3);
+    }
+
+    @include breakpoint(xl) {
+      flex: 0 1 calc(530px / 3);
+    }
+
+    img {
+      width: auto;
+    }
+  }
+
+  &__image:first-child {
+    @include breakpoint(sm) {
+      border-radius: 4px;
+      max-width: 100%;
+      flex: 1 1 100%;
+    }
+  }
+
+  &__name {
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    font-size: 20px;
+    font-family: $font-hn-semibold;
+    color: var(--mid-blue);
+    margin-bottom: 15px;
+
+    @include breakpoint(md) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__colors {
+    margin-bottom: 40px;
+
+    .color-icons {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .color-icon {
+      height: 48px;
+      width: 48px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      box-shadow: inset 0px 0px 0px 1px rgba(199, 209, 252, 0.25);
+
+      &.dark-blue {
+        background-color: var(--navy-blue);
+      }
+
+      &.white {
+        background-color: var(--white);
+      }
+    }
+  }
+
+  .option-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .option-arrow {
+    color: var(--navy-blue);
+    font-size: 17px;
+  }
+
+  .option-description {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__fabric,
+  &__quantities,
+  &__embroidery {
+    margin-bottom: 40px;
+  }
+
+  &__fabric {
+    color: var(--navy-blue);
+
+    .fabric-guide {
+      color: var(--mid-blue);
+      text-decoration: underline;
+    }
+
+    .type-title {
+      font-size: 16px;
+      font-family: $font-hn-regular;
+      margin-bottom: 8px;
+    }
+  }
+
+  .contact-us-link {
+    width: fit-content;
+
+    .link {
+      display: flex;
+      border-radius: 4px;
+      padding: 12px;
+      background-color: var(--electric-blue);
+      color: var(--white);
+
+      .link__icon {
+        color: var(--white);
+        font-size: 22px;
+      }
+    }
+  }
+}
