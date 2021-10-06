@@ -51,8 +51,6 @@ function getPositionX(event) {
 // use a HOF so we have index in a closure
 function touchStart(index) {
   return function (event) {
-    currentIndex = index
-    console.log(index)
     startPos = getPositionX(event)
     isDragging = true
     animationID = requestAnimationFrame(animation)
