@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
 
-      <div class="product-detail__info col-sm-5 col-md-4 offset-sm-1">
+      <div class="product-detail__info col-12 d-sm-none">
         <h2 class="product-detail__name">
           {{productName}}
         </h2>
@@ -16,7 +16,7 @@
         </p>
       </div>
 
-      <div class="product-detail__images col-sm-6 order-sm-first">
+      <div class="product-detail__images col-sm-6">
         {{#each images}}
           <div class="product-detail__image">
             {{{asset this}}}
@@ -24,7 +24,21 @@
         {{/each}}
       </div>
 
-      <div class="product-detail__options col-sm-5 col-md-4 offset-sm-7">
+      <div class="product-detail__options offset-sm-1 col-sm-5 col-md-4">
+
+        <div class="product-detail__info d-none d-sm-block">
+          <h2 class="product-detail__name">
+            {{productName}}
+          </h2>
+          {{#if productDescription}}
+            <p class="product-detail__description">
+              {{productDescription}}
+            </p>
+          {{/if}}
+          <p class="product-detail__price">
+            {{productPrice}}
+          </p>
+        </div>
 
         {{#if productColors}}
           <div class="product-detail__colors">

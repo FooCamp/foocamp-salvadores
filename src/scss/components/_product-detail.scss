@@ -7,8 +7,15 @@
     padding-top: 52px;
   }
 
+  .col-12,
+  .col-sm-5 {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
   .col-sm-6,
-  .col-sm-4 {
+  .col-sm-4,
+  .col-12,
+  .col-sm-5 {
     @include breakpoint(sm) {
       padding: 0;
     }
@@ -16,8 +23,9 @@
 
   &__images {
     display: flex;
-    width: 92vw;
-    margin: 4vw;
+    width: 96vw;
+    margin-left: 4vw;
+    margin-bottom: 16px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
