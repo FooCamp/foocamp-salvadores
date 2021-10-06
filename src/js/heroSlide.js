@@ -1,7 +1,7 @@
 
 // get our elements
-const slider = document.querySelector('.carousel'),
-  slides = Array.from(document.querySelectorAll('.hero__slide__container'))
+const slider = document.querySelector('.hero__carousel'),
+  slides = Array.from(document.querySelectorAll('.hero__slide'))
 
 // set up our state
 let isDragging = false,
@@ -15,7 +15,7 @@ let isDragging = false,
   slides.forEach(element => {
     let Createlabel = document.createElement('label');
     Createlabel.innerText = '.';
-    Createlabel.className = 'hero__slider__dot';
+    Createlabel.className = 'hero__slider-dot';
     labels.append(Createlabel);
   });
 // add our event listeners
@@ -89,7 +89,7 @@ function animation() {
 
 
 
-btns = document.querySelectorAll(".hero__slider__dot");
+btns = document.querySelectorAll(".hero__slider-dot");
 btns[0].classList.add('active');
 function setPositionByIndex() {
   currentTranslate = currentIndex * -window.innerWidth

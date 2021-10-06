@@ -1,0 +1,16 @@
+.category-products {
+  padding: 40px 0 48px;
+  background-color: var(--gray);
+
+  @include breakpoint(md) {
+    padding-bottom: 64px;
+  }
+
+  &__item {
+    margin-bottom: 34px;
+
+    @include breakpoint(md) {
+      margin-bottom: 38px;
+    }
+  }
+}

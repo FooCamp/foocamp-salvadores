@@ -1,3 +1,8 @@
-<a href="{{link}}.html" class="{{type}} hero__button">
-  {{linkText}} <i class="fab fa-{{type}} icon"></i>
+<a href="{{link}}" class="link link--{{type}} p" target="{{#if isExternal}}_blank{{else}}_self{{/if}}">
+  {{linkText}}
+  {{#if withArrow}}
+  <i class="link__icon fas fa-chevron-right"></i>
+  {{/if}}
+  <i class="link__icon fab fa-instagram fa-lg"></i>
+  <i class="link__icon fab fa-whatsapp fa-lg"></i>
 </a>

@@ -1,14 +1,14 @@
-<div class="hero__slide__container {{#if isDarkTheme}}Dark{{/if}}">
-    
-    <div class="hero__img">
+<div class="hero__slide {{#if isDarkTheme}}Dark{{/if}}">
+  <div class="hero__img">
     {{{asset image}}}
-    <div class="hero__img--opacity">
+    <div class="hero__img--mask"></div>
+  </div>
+
+  <div class="hero__info">
+    <h1 class="hero__title">{{title}}</h1>
+    <p class="hero__description">{{description}}</p>
+    <div class="hero__button">
+      {{{module link}}}
     </div>
-    </div>
-    
-    <div class="info">
-        <h1 class="hero__title">{{title}}</h1>
-        <p class="hero__description">{{description}}</p>
-        {{{module link}}}
-    </div>
+  </div>
 </div>

@@ -1,0 +1,13 @@
+{{!-- HTML structure for the  Products component, where the Title and the list of products is displayed--}}
+<section class="products">
+  <div class="container">
+    <h2 class="products__title">{{title}}</h2>
+    <ul class="row">
+      {{#each products}}
+      <li class="products__item col-12 col-sm-6 col-lg-4">
+        {{{module this}}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
