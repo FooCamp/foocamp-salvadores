@@ -40,6 +40,24 @@
           </p>
         </div>
 
+        {{#if sizes}}
+          <div class="product-detail__sizes">
+            <h3 class="option-title">Tallas disponibles</h3>
+            <div class="size-icons">
+              {{#each sizes}}
+                <div class="size-icon">{{{this}}}</div>
+              {{/each}}
+            </div>
+            {{#if sizesImage}}
+              <button
+                type="button"
+                class="btn sizes-guide p"
+                id="open-modal"
+              >Guía de tallas</button>
+            {{/if}}
+          </div>
+        {{/if}}
+
         {{#if productColors}}
           <div class="product-detail__colors">
             <h3 class="option-title">Colores disponibles</h3>
@@ -99,4 +117,14 @@
       </div>
     </div>
   </div>
+  {{#if sizesImage}}
+    <div class="sizes-modal" tabindex="-1" id="sizes-modal">
+      <div class="modal-content">
+        {{{asset sizesImage}}}
+        <button class="close-button" id="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  {{/if}}
 </div>

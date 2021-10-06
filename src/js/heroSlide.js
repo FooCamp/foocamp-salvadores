@@ -90,7 +90,11 @@ function animation() {
 
 
 btns = document.querySelectorAll(".hero__slider-dot");
-btns[0].classList.add('active');
+
+if(btns[0]) {
+  btns[0].classList.add('active');
+}
+
 function setPositionByIndex() {
   currentTranslate = currentIndex * -window.innerWidth
   prevTranslate = currentTranslate
@@ -98,11 +102,16 @@ function setPositionByIndex() {
   btns.forEach((btn) => {
     btn.classList.remove('active');
   });
-  btns[currentIndex].classList.add('active');
+
+  if(btns.length) {
+    btns[currentIndex].classList.add('active');
+  }
 }
 
 function setSliderPosition() {
-  slider.style.transform = `translateX(${currentTranslate}px)`
+  if(slider) {
+    slider.style.transform = `translateX(${currentTranslate}px)`
+  }
 }
 
 btns.forEach((btn, i) => {
