@@ -1,15 +1,24 @@
 .footer {
   color: var(--white);
   background-color: var(--navy-blue);
-  padding: 48px 0 90px;
-  
+  padding: 40px 15px 72px;
+
+  @include breakpoint(md) {
+    padding: 48px 0 90px;
+  }
 
   &__title {
     margin-bottom: 16px;
-  }
+      }
 
   &__links {
-    column-count: 2;
+    column-count: 1;
+    margin-bottom: 28px;
+
+    @include breakpoint(md) {
+      column-count: 2;
+      margin-bottom: 0;
+    }
   }
 
   &__link {
