@@ -1,5 +1,6 @@
 .product-detail {
   background-color: var(--gray);
+  color: var(--navy-blue);
   padding-top: 15px;
   padding-bottom: 112px;
 
@@ -148,6 +149,40 @@
     }
   }
 
+  &__sizes {
+    margin-bottom: 40px;
+
+    .size-icons {
+      display: flex;
+      flex-flow: row wrap;
+      margin-bottom: 16px;
+      font-size: 16px;
+      font-family: $font-hn-regular;
+    }
+
+    .size-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 48px;
+      width: 48px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      background-color: var(--white);
+      box-shadow: inset 0px 0px 0px 1px rgba(199, 209, 252, 0.25);
+    }
+
+    .sizes-guide {
+      color: var(--mid-blue);
+      text-decoration: underline;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      padding: 0;
+    }
+  }
+
   .option-title {
     font-size: 20px;
     margin-bottom: 16px;
@@ -197,6 +232,80 @@
       .link__icon {
         color: var(--white);
         font-size: 22px;
+      }
+    }
+  }
+
+  .sizes-modal {
+    //display: none; /* Hidden by default */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity var(--anim-duration) linear;
+
+    .modal-content {
+      width: 97vw;
+      max-width: fit-content;
+      margin: auto;
+      padding: 1vw;
+      background-color: var(--white);
+
+      @include breakpoint(sm) {
+        padding: 20px;
+      }
+
+      @include breakpoint(md) {
+        padding: 40px;
+      }
+
+      @include breakpoint(lg) {
+        padding: 60px;
+      }
+
+      @include breakpoint(xl) {
+        padding: 80px;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .close-button {
+        position: absolute;
+        right: 1.5vw;
+        top: 1vw;
+        color: var(--mid-blue);
+        text-decoration: underline;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0;
+
+        @include breakpoint(sm) {
+          right: 13px;
+          top: 10px;
+        }
+
+        @include breakpoint(lg) {
+          right: 20px;
+          top: 16px;
+        }
+
+        @include breakpoint(xl) {
+          right: 28px;
+          top: 28px;
+        }
+
+        .fas.fa-times {
+          font-size: 28px;
+        }
       }
     }
   }
