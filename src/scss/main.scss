@@ -13,6 +13,7 @@
 @import 'layout/footer';
 
 // Components
+@import 'components/hero';
 @import 'components/products';
 @import 'components/product';
 @import 'components/link';
@@ -21,3 +22,6 @@
 @import 'components/category-products';
 @import 'components/category-product';
 @import 'components/category-header';
+@import 'components/product-detail';
+@import 'components/related-product';
+@import 'components/related-products';

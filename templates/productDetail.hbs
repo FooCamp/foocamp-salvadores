@@ -1,0 +1,130 @@
+<div class="product-detail">
+  <div class="container">
+    <div class="row">
+
+      <div class="product-detail__info col-12 d-sm-none">
+        <h2 class="product-detail__name">
+          {{productName}}
+        </h2>
+        {{#if productDescription}}
+          <p class="product-detail__description">
+            {{productDescription}}
+          </p>
+        {{/if}}
+        <p class="product-detail__price">
+          {{productPrice}}
+        </p>
+      </div>
+
+      <div class="product-detail__images col-sm-6">
+        {{#each images}}
+          <div class="product-detail__image">
+            {{{asset this}}}
+          </div>
+        {{/each}}
+      </div>
+
+      <div class="product-detail__options offset-sm-1 col-sm-5 col-md-4">
+
+        <div class="product-detail__info d-none d-sm-block">
+          <h2 class="product-detail__name">
+            {{productName}}
+          </h2>
+          {{#if productDescription}}
+            <p class="product-detail__description">
+              {{productDescription}}
+            </p>
+          {{/if}}
+          <p class="product-detail__price">
+            {{productPrice}}
+          </p>
+        </div>
+
+        {{#if sizes}}
+          <div class="product-detail__sizes">
+            <h3 class="option-title">Tallas disponibles</h3>
+            <div class="size-icons">
+              {{#each sizes}}
+                <div class="size-icon">{{{this}}}</div>
+              {{/each}}
+            </div>
+            {{#if sizesImage}}
+              <button
+                type="button"
+                class="btn sizes-guide p"
+                id="open-modal"
+              >Guía de tallas</button>
+            {{/if}}
+          </div>
+        {{/if}}
+
+        {{#if productColors}}
+          <div class="product-detail__colors">
+            <h3 class="option-title">Colores disponibles</h3>
+            <div class="color-icons">
+              {{#each productColors}}
+                <div class="color-icon {{{this}}}"></div>
+              {{/each}}
+            </div>
+          </div>
+        {{/if}}
+
+        {{#if typeOfFabric}}
+          <div class="product-detail__fabric">
+            <h3 class="option-title">Tipo de tela
+              <i class="option-arrow fas fa-chevron-down"></i>
+            </h3>
+            {{#each typeOfFabric}}
+              {{{module this}}}
+            {{/each}}
+            {{#if fabricImage}}
+              <a
+                href="{{assetSrc fabricImage}}"
+                download="fabricImage"
+                target="_blank"
+                class="fabric-guide p"
+              >Guía de telas</a>
+            {{/if}}
+          </div>
+        {{/if}}
+
+        {{#if quantities}}
+          <div class="product-detail__quantities">
+            <h3 class="option-title">Cantidades
+              <i class="option-arrow fas fa-chevron-down"></i>
+            </h3>
+            <p class="option-description">
+              {{quantities}}
+            </p>
+          </div>
+        {{/if}}
+
+        {{#if embroideryOptions}}
+          <div class="product-detail__embroidery">
+            <h3 class="option-title">Opción de bordado
+              <i class="option-arrow fas fa-chevron-down"></i>
+            </h3>
+            <p class="option-description">
+              {{embroideryOptions}}
+            </p>
+          </div>
+        {{/if}}
+
+        <div class="contact-us-link">
+          {{{module contactUsLink}}}
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {{#if sizesImage}}
+    <div class="sizes-modal" tabindex="-1" id="sizes-modal">
+      <div class="modal-content">
+        {{{asset sizesImage}}}
+        <button class="close-button" id="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  {{/if}}
+</div>
